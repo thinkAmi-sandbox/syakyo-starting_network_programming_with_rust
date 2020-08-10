@@ -1,0 +1,19 @@
+[package]
+name = "packet-capture"
+version = "0.1.0"
+authors = ["thinkAmi <dev.thinkami@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# データリンク層からトランスポート層までの各種プロトコルを扱う libpnet
+
+# 0.22.0だと、以下のエラーが発生してコンパイルできない
+# error[E0599]: no method named `to_primitive_values` found for struct `pnet_base::MacAddr` in the current scope
+# このあたり? https://github.com/libpnet/libpnet/issues/361
+#pnet = "0.22.0"
+pnet = "0.26.0"
+
+log = "0.4"
+env_logger = "0.6.1"
